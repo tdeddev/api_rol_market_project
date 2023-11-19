@@ -9,7 +9,7 @@ let weapon_type = ['all','Katar','Bow','Mace','1hSword','2hSpear','2hSword']
 
 router.post('/get_item', async (req,res) => {
     let {indexCategory , indexWeapon} = req.body
-    let mode = category[indexCategory] || category[0]
+    let mode = category[indexCategory] || category[1]
     let mode_weapon = weapon_type[indexWeapon] || weapon_type[0]
     let response = []
     let list = []
@@ -42,6 +42,7 @@ router.post('/get_item', async (req,res) => {
                             img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                             name : response.data[i].nft.nameEnglish,
                             price : Number(response.data[i].price),
+                            refine : response.data[i].nft.refine,
                             option1 : response.data[i].nft.option0Text,
                             option2 : response.data[i].nft.option1Text,
                             option3 : response.data[i].nft.option2Text,
@@ -85,6 +86,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -116,6 +118,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -147,6 +150,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -178,6 +182,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -209,6 +214,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -240,6 +246,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -271,6 +278,7 @@ router.post('/get_item', async (req,res) => {
                                     img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                                     name : response.data[i].nft.nameEnglish,
                                     price : Number(response.data[i].price),
+                                    refine : response.data[i].nft.refine,
                                     option1 : response.data[i].nft.option0Text,
                                     option2 : response.data[i].nft.option1Text,
                                     option3 : response.data[i].nft.option2Text,
@@ -313,6 +321,7 @@ router.post('/get_item', async (req,res) => {
                             img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                             name : response.data[i].nft.nameEnglish,
                             price : Number(response.data[i].price),
+                            refine : response.data[i].nft.refine,
                             option1 : response.data[i].nft.option0Text,
                             option2 : response.data[i].nft.option1Text,
                             option3 : response.data[i].nft.option2Text,
