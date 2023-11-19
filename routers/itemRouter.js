@@ -445,8 +445,8 @@ router.post('/get_item', async (req,res) => {
                         code : '100'
                     })
                 }
-                if(response.data[i].nft.locationCostumeHeadTop == 1 || response.data[i].nft.locationCostumeHeadMid == 1 || response.data[i].nft.locationCostumeHeadLow == 1 || response.data[i].nft.locationCostumeGarment == 1){
-                    for(let i = 0; i < response.data.length; i++){
+                for(let i = 0; i < response.data.length; i++){
+                    if(response.data[i].nft.locationCostumeHeadTop == 1 || response.data[i].nft.locationCostumeHeadMid == 1 || response.data[i].nft.locationCostumeHeadLow == 1 || response.data[i].nft.locationCostumeGarment == 1){
                         let obj = {
                             img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
                             name : response.data[i].nft.nameEnglish,
