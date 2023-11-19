@@ -24,8 +24,37 @@ router.post('/get_item', async (req,res) => {
                         code : '100'
                     })
                 }
+                for(let i = 0; i < response.data.length; i++){
+                    if(response.data[i].nft.refine >= 7 && !!response.data[i].nft.option0Text){
+                        let obj = {
+                            img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
+                            name : response.data[i].nft.nameEnglish,
+                            price : Number(response.data[i].price),
+                            refine : response.data[i].nft.refine,
+                            option1 : response.data[i].nft.option0Text,
+                            option2 : response.data[i].nft.option1Text,
+                            option3 : response.data[i].nft.option2Text,
+                            option4 : response.data[i].nft.option3Text,
+                            option5 : response.data[i].nft.option4Text,
+                            url : `${buy_url}${response.data[i].id}`
+                        }
+                        if(!!response.data[i].nft.card0Name){
+                            obj.card1 = response.data[i].nft.card0Name
+                        }
+                        if(!!response.data[i].nft.card1Name){
+                            obj.card2 = response.data[i].nft.card1Name
+                        }
+                        if(!!response.data[i].nft.card2Name){
+                            obj.card3 = response.data[i].nft.card2Name
+                        }
+                        list.push(obj)
+                    }
+                    sort = list.sort((a,b) => {
+                        return a.price - b.price
+                    })
+                }
                 res.send({
-                    data : response.data
+                    data : sort
                 })
                 break;
             case 'headgear':
@@ -356,8 +385,20 @@ router.post('/get_item', async (req,res) => {
                         code : '100'
                     })
                 }
+                for(let i = 0; i < response.data.length; i++){
+                    let obj = {
+                        img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
+                        name : response.data[i].nft.nameEnglish,
+                        price : Number(response.data[i].price),
+                        url : `${buy_url}${response.data[i].id}`
+                    }
+                    list.push(obj)
+                }
+                sort = list.sort((a,b) => {
+                    return a.price - b.price
+                })
                 res.send({
-                    data : response.data
+                    data : sort
                 })
                 break;
             case 'shadowgear':
@@ -368,8 +409,32 @@ router.post('/get_item', async (req,res) => {
                         code : '100'
                     })
                 }
+                for(let i = 0; i < response.data.length; i++){
+                    if(response.data[i].nft.refine >= 7 && !!response.data[i].nft.option0Text){
+                        let obj = {
+                            img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
+                            name : response.data[i].nft.nameEnglish,
+                            price : Number(response.data[i].price),
+                            refine : response.data[i].nft.refine,
+                            url : `${buy_url}${response.data[i].id}`
+                        }
+                        if(!!response.data[i].nft.card0Name){
+                            obj.card1 = response.data[i].nft.card0Name
+                        }
+                        if(!!response.data[i].nft.card1Name){
+                            obj.card2 = response.data[i].nft.card1Name
+                        }
+                        if(!!response.data[i].nft.card2Name){
+                            obj.card3 = response.data[i].nft.card2Name
+                        }
+                        list.push(obj)
+                    }
+                    sort = list.sort((a,b) => {
+                        return a.price - b.price
+                    })
+                }
                 res.send({
-                    data : response.data
+                    data : sort
                 })
                 break;
             case 'costume':
@@ -380,8 +445,20 @@ router.post('/get_item', async (req,res) => {
                         code : '100'
                     })
                 }
+                for(let i = 0; i < response.data.length; i++){
+                    let obj = {
+                        img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
+                        name : response.data[i].nft.nameEnglish,
+                        price : Number(response.data[i].price),
+                        url : `${buy_url}${response.data[i].id}`
+                    }
+                    list.push(obj)
+                }
+                sort = list.sort((a,b) => {
+                    return a.price - b.price
+                })
                 res.send({
-                    data : response.data
+                    data : sort
                 })
                 break;
             default:
