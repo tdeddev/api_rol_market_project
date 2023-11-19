@@ -4,7 +4,7 @@ const axios = require('axios')
 const URL_MARKET = 'https://apps.maxion.gg/api/market/list?status=LISTING&serverId=1'
 const BASE_URL_Img = 'https://apps.maxion.gg/_next/image?url=https%3A%2F%2Frop2e-collection-cdn.s3-bkk.nipa.cloud%2F'
 const buy_url = 'https://apps.maxion.gg/roverse/detail/'
-let category = ['all','headgear', 'weapon', 'armor', 'card', 'shadowgear', 'costume']
+let category = ['all','headgear', 'weapon', 'armor', 'card', 'Shadowgear', 'costume']
 let weapon_type = ['all','Katar','Bow','Mace','1hSword','2hSpear','2hSword']
 
 router.post('/get_item', async (req,res) => {
@@ -445,14 +445,16 @@ router.post('/get_item', async (req,res) => {
                         code : '100'
                     })
                 }
-                for(let i = 0; i < response.data.length; i++){
-                    let obj = {
-                        img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
-                        name : response.data[i].nft.nameEnglish,
-                        price : Number(response.data[i].price),
-                        url : `${buy_url}${response.data[i].id}`
+                if(response.data[i].nft.locationCostumeHeadTop == 1 || response.data[i].nft.locationCostumeHeadMid == 1 || response.data[i].nft.locationCostumeHeadLow == 1 || response.data[i].nft.locationCostumeGarment == 1){
+                    for(let i = 0; i < response.data.length; i++){
+                        let obj = {
+                            img : `${BASE_URL_Img}${response.data[i].nft.nameid}.png&w=256&q=75`,
+                            name : response.data[i].nft.nameEnglish,
+                            price : Number(response.data[i].price),
+                            url : `${buy_url}${response.data[i].id}`
+                        }
+                        list.push(obj)
                     }
-                    list.push(obj)
                 }
                 sort = list.sort((a,b) => {
                     return a.price - b.price
