@@ -62,6 +62,9 @@ router.post('/get_item', async (req,res) => {
                     if(!!response.data[i].nft.card2Name){
                         obj.card3 = response.data[i].nft.card2Name
                     }
+                    if(!!response.data[i].nft.slots){
+                        obj.slot = response.data[i].nft.slots
+                    }
                     list.push(obj)
                 }
                 switch (search) {
@@ -119,6 +122,9 @@ router.post('/get_item', async (req,res) => {
                         }
                         if(!!response.data[i].nft.card2Name){
                             obj.card3 = response.data[i].nft.card2Name
+                        }
+                        if(!!response.data[i].nft.slots){
+                            obj.slot = response.data[i].nft.slots
                         }
                         list.push(obj)
                     }
@@ -182,6 +188,9 @@ router.post('/get_item', async (req,res) => {
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
                                 }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
+                                }
                                 list.push(obj)
                             }
                         }
@@ -210,6 +219,9 @@ router.post('/get_item', async (req,res) => {
                                 }
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
+                                }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
                                 }
                                 list.push(obj)
                             }
@@ -240,6 +252,9 @@ router.post('/get_item', async (req,res) => {
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
                                 }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
+                                }
                                 list.push(obj)
                             }
                         }
@@ -268,6 +283,9 @@ router.post('/get_item', async (req,res) => {
                                 }
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
+                                }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
                                 }
                                 list.push(obj)
                             }
@@ -298,6 +316,9 @@ router.post('/get_item', async (req,res) => {
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
                                 }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
+                                }
                                 list.push(obj)
                             }
                         }
@@ -327,6 +348,9 @@ router.post('/get_item', async (req,res) => {
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
                                 }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
+                                }
                                 list.push(obj)
                             }
                         }
@@ -355,6 +379,9 @@ router.post('/get_item', async (req,res) => {
                                 }
                                 if(!!response.data[i].nft.card2Name){
                                     obj.card3 = response.data[i].nft.card2Name
+                                }
+                                if(!!response.data[i].nft.slots){
+                                    obj.slot = response.data[i].nft.slots
                                 }
                                 list.push(obj)
                             }
@@ -417,6 +444,9 @@ router.post('/get_item', async (req,res) => {
                         if(!!response.data[i].nft.card2Name){
                             obj.card3 = response.data[i].nft.card2Name
                         }
+                        if(!!response.data[i].nft.slots){
+                            obj.slot = response.data[i].nft.slots
+                        }
                         list.push(obj)
                     }
                 }
@@ -459,6 +489,9 @@ router.post('/get_item', async (req,res) => {
                         name : response.data[i].nft.nameEnglish,
                         price : Number(response.data[i].price),
                         url : `${buy_url}${response.data[i].id}`
+                    }
+                    if(!!response.data[i].nft.slots){
+                        obj.slot = response.data[i].nft.slots
                     }
                     list.push(obj)
                 }
@@ -513,6 +546,9 @@ router.post('/get_item', async (req,res) => {
                         if(!!response.data[i].nft.card2Name){
                             obj.card3 = response.data[i].nft.card2Name
                         }
+                        if(!!response.data[i].nft.slots){
+                            obj.slot = response.data[i].nft.slots
+                        }
                         list.push(obj)
                     }
                 }
@@ -556,6 +592,9 @@ router.post('/get_item', async (req,res) => {
                             name : response.data[i].nft.nameEnglish,
                             price : Number(response.data[i].price),
                             url : `${buy_url}${response.data[i].id}`
+                        }
+                        if(!!response.data[i].nft.slots){
+                            obj.slot = response.data[i].nft.slots
                         }
                         list.push(obj)
                     }
